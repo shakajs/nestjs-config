@@ -16,12 +16,10 @@ jobs:
           node-version: 12.x
           registry-url: https://registry.npmjs.org/
           scope: "shaka-time"
-      - run: npm install
-      - name: Download artifact
-        uses: actions/download-artifact@v1.0.0
-        with:
-          name: dist 
-          path: dist  
-      - run: npm publish --access public
+      - name: Build and publish
+        run: |
+          npm install
+          npm build
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
