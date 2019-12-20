@@ -1,6 +1,6 @@
 {
   "name": "@shaka-time/nestjs-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Config module for NestJS applications",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
