@@ -1,0 +1,17 @@
+name: Push
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1.1.0
+        with:
+          version: 12.x
+          scope: "@shaka-time"
+      - name: Run build
+        run: npm run build
