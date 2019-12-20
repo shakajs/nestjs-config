@@ -9,3 +9,5 @@
 # configuration
 package-lock.json
 tsconfig.json
+**/*.yml
+*.yml
