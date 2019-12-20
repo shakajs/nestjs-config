@@ -16,4 +16,6 @@ jobs:
           version: 12.x
           scope: "@shaka-time"
       - name: Run build
-        run: npm run build
+        run: |
+          npm i
+          npm run build
