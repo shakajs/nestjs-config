@@ -1,5 +1,5 @@
 {
-  "name": "@shaka-time/nestjs-config",
+  "name": "@shakajs/nestjs-config",
   "version": "2.0.5",
   "description": "Config module for NestJS applications",
   "types": "dist/index.d.ts",

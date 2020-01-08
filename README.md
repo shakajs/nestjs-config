@@ -1,13 +1,13 @@
 **Install**
 
-```npm i @shaka-time/nestjs-config --save```
+```npm i @shakajs/nestjs-config --save```
 
 **Using**
 
 ***1. Create config file:***
 
 ```
-import { ConfigDefaultValue } from '@shaka-time/nestjs-config';
+import { ConfigDefaultValue } from '@shakajs/nestjs-config';
 
 export class AppConfig {
   @ConfigDefaultValue(() => process.env.DB_HOST || 'localhost')
@@ -31,7 +31,7 @@ export class AppConfig {
 
 ```
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@shaka-time/nestjs-config';
+import { ConfigModule } from '@shakajs/nestjs-config';
 import { AppConfig } from './app.config';
 
 @Module({
@@ -47,7 +47,7 @@ export class AppModule {}
 ```
 import { Injectable } from '@nestjs/common';
 import { AppConfig } from '../app.config';
-import { InjectConfig } from '@shaka-time/nestjs-config';
+import { InjectConfig } from '@shakajs/nestjs-config';
 
 @Injectable()
 export class ExampleService {
@@ -65,7 +65,7 @@ export class ExampleService {
 ***4. Use in custom provider:***
 
 ```
-import { APP_CONFIG } from '@shaka-time/nestjs-config';
+import { APP_CONFIG } from '@shakajs/nestjs-config';
 
 ...
 
