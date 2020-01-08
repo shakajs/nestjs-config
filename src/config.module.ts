@@ -17,15 +17,14 @@ export class ConfigModule {
               dotenv.config();
             }
             const config = {};
-            schemas.map(schema => {
+            for (const schema of schemas) {
               const schemaObject = new schema();
-              return Object.keys(schemaObject)
-                .filter(key => Reflect.hasMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key))
-                .map(key => {
-                  const func = Reflect.getMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key);
-                  config[key] = func();
-                });
-            });
+              const keys = Object.keys(schemaObject).filter(key => Reflect.hasMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key));
+              for (const key of keys) {
+                const func = Reflect.getMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key);
+                config[key] = func();
+              }
+            }
             return config;
           },
         },
