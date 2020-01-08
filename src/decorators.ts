@@ -1,8 +1,11 @@
 import 'reflect-metadata';
-import { DEFAULT_CONFIG_VALUE } from './constants';
+import { APP_CONFIG, DEFAULT_CONFIG_VALUE } from './constants';
+import { Inject } from '@nestjs/common';
 
-export function ConfigDefaultValue(func: Function) {
+export const ConfigDefaultValue = (func: Function) => {
   return (target: any, propertyKey: string | symbol) => {
     Reflect.defineMetadata(DEFAULT_CONFIG_VALUE, func, target, propertyKey);
   };
-}
+};
+
+export const InjectConfig = () => Inject(APP_CONFIG);

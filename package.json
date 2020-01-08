@@ -1,6 +1,6 @@
 {
   "name": "@shaka-time/nestjs-config",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Config module for NestJS applications",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -11,13 +11,13 @@
   "author": "Sergey Krivochenko",
   "license": "MIT",
   "dependencies": {
-    "@nestjs/common": "^6.10.12",
-    "@nestjs/core": "^6.10.12",
+    "@nestjs/common": "^6.10.14",
+    "@nestjs/core": "^6.10.14",
     "dotenv": "^8.2.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "@types/node": "^12.12.21",
+    "@types/node": "^12.12.24",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
