@@ -29,6 +29,7 @@ export class ConfigModule {
                     key,
                   );
                   previous[key] = func();
+                  return previous;
                 });
             }, {});
           },
