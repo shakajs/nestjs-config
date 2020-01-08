@@ -1,3 +1,10 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/shakajs/nestjs-config/Publish)
+![GitHub](https://img.shields.io/github/license/shakajs/nestjs-config)
+[![install size](https://packagephobia.now.sh/badge?p=@shakajs/nestjs-config)](https://packagephobia.now.sh/result?p=@shakajs/nestjs-config)
+[![npm (scoped)](https://img.shields.io/npm/v/@shakajs/nestjs-config.svg)](https://www.npmjs.com/package/@shakajs/nestjs-config)
+[![Known Vulnerabilities](https://snyk.io/test/github/shakajs/nestjs-config/badge.svg?targetFile=package.json)](https://snyk.io/test/github/shakajs/nestjs-config?targetFile=package.json)
+[![DeepScan grade](https://deepscan.io/api/teams/6650/projects/8686/branches/108718/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=6650&pid=8686&bid=108718)
+
 **Install**
 
 ```npm i @shakajs/nestjs-config --save```
