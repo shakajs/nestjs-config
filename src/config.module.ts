@@ -16,22 +16,17 @@ export class ConfigModule {
             if (fs.existsSync('.env')) {
               dotenv.config();
             }
-            return schemas.reduce((previous, schema) => {
+            const config = {};
+            schemas.map(schema => {
               const schemaObject = new schema();
               return Object.keys(schemaObject)
-                .filter(key =>
-                  Reflect.hasMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key),
-                )
+                .filter(key => Reflect.hasMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key))
                 .map(key => {
-                  const func = Reflect.getMetadata(
-                    DEFAULT_CONFIG_VALUE,
-                    schemaObject,
-                    key,
-                  );
-                  previous[key] = func();
-                  return previous;
+                  const func = Reflect.getMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key);
+                  config[key] = func();
                 });
-            }, {});
+            });
+            return config;
           },
         },
       ],
