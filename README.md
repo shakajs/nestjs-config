@@ -4,7 +4,8 @@
 
 **Using**
 
-1. Create config file:
+***1. Create config file:***
+
 ```
 import { ConfigDefaultValue } from '@shaka-time/nestjs-config';
 
@@ -26,7 +27,7 @@ export class AppConfig {
 }
 ```
 
-2. Register created config in root-module:
+***2. Register created config in root-module:***
 
 ```
 import { Module } from '@nestjs/common';
@@ -41,7 +42,8 @@ import { AppConfig } from './app.config';
 export class AppModule {}
 ```
 
-3. Use in service:
+***3. Use in service:***
+
 ```
 import { Injectable } from '@nestjs/common';
 import { AppConfig } from '../app.config';
@@ -60,7 +62,8 @@ export class ExampleService {
 }
 ```
 
-4. Use in custom provider:
+***4. Use in custom provider:***
+
 ```
 import { APP_CONFIG } from '@shaka-time/nestjs-config';
 
