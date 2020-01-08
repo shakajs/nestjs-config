@@ -44,7 +44,6 @@ export class AppModule {}
 3. Use in service:
 ```
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@shaka-time/nestjs-config';
 import { AppConfig } from '../app.config';
 import { InjectConfig } from '@shaka-time/nestjs-config';
 
