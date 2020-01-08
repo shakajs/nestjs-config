@@ -46,16 +46,34 @@ export class AppModule {}
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@shaka-time/nestjs-config';
 import { AppConfig } from '../app.config';
+import { InjectConfig } from '@shaka-time/nestjs-config';
 
 @Injectable()
 export class ExampleService {
   constructor(
-    private readonly configService: ConfigService<AppConfig>,
+    @InjectConfig() private readonly config: AppConfig,
   ) {
   }
   
   getTokenFromCongig() {
-    return this.configService.config.token;
+    return this.config.token;
   }
 }
+```
+
+4. Use in custom provider:
+```
+import { APP_CONFIG } from '@shaka-time/nestjs-config';
+
+...
+
+providers: [  
+  {
+    provide: 'SOME_VALUE',
+    useFactory: (config: AppConfig) => {
+      return config.someKey;
+    },
+    inject: [APP_CONFIG],
+  }
+],
 ```
