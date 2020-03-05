@@ -18,21 +18,22 @@ import { ConfigDefaultValue } from '@shakajs/nestjs-config';
 
 export class AppConfig {
   @ConfigDefaultValue(() => process.env.DB_HOST || 'localhost')
-  dbHost: string = null;
+  dbHost: string;
 
   @ConfigDefaultValue(() => process.env.DB_PORT || '3306')
-  dbPort: string = null;
+  dbPort: string;
 
   @ConfigDefaultValue(() => process.env.DB_USER || 'root')
-  dbUser: string = null;
+  dbUser: string;
   
   @ConfigDefaultValue(() => process.env.DB_PASSWORD || '')
-  dbPassword: string = null;
+  dbPassword: string;
   
   @ConfigDefaultValue(() => process.env.TOKEN || '')
-  token: string = null;
+  token: string;
 }
 ```
+Note: if you have .env it values will be loaded automatically.
 
 ***2. Register created config in root-module:***
 

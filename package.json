@@ -1,6 +1,6 @@
 {
   "name": "@shakajs/nestjs-config",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Config module for NestJS applications",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -13,9 +13,11 @@
   "author": "Sergey Krivochenko",
   "license": "MIT",
   "dependencies": {
-    "@nestjs/common": "^6.10.14",
-    "@nestjs/core": "^6.10.14",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.2.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.11.11",
+    "@nestjs/core": "^6.11.11",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {

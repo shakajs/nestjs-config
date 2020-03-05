@@ -4,7 +4,8 @@ import { Inject } from '@nestjs/common';
 
 export const ConfigDefaultValue = (func: Function) => {
   return (target: any, propertyKey: string | symbol) => {
-    Reflect.defineMetadata(DEFAULT_CONFIG_VALUE, func, target, propertyKey);
+    const previous = Reflect.getMetadata(DEFAULT_CONFIG_VALUE, target) || {};
+    Reflect.defineMetadata(DEFAULT_CONFIG_VALUE, Object.assign(previous, { [propertyKey]: func }), target);
   };
 };
 

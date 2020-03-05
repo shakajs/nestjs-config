@@ -19,9 +19,10 @@ export class ConfigModule {
             const config = {};
             for (const schema of schemas) {
               const schemaObject = new schema();
-              const keys = Object.keys(schemaObject).filter(key => Reflect.hasMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key));
+              const defaultFunctions = Reflect.getMetadata(DEFAULT_CONFIG_VALUE, schemaObject) || {};
+              const keys = Object.keys(defaultFunctions);
               for (const key of keys) {
-                const func = Reflect.getMetadata(DEFAULT_CONFIG_VALUE, schemaObject, key);
+                const func = defaultFunctions[key];
                 config[key] = func();
               }
             }
