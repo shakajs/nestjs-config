@@ -44,7 +44,7 @@ import { AppConfig } from './app.config';
 
 @Module({
   imports: [
-    ConfigModule.register(AppConfig),
+    ConfigModule.register({ schemas: [AppConfig] }),
   ],
 })
 export class AppModule {}
